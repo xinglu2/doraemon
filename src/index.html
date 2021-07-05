@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+        minimum-scale=1,maximum-scale=1,user-scalable=no,
+        viewport-fit=cover">
+    <title>哆啦A梦</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+    <style id="style"></style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::before {
+            box-sizing: border-box;
+        }
+
+        *::after {
+            box-sizing: border-box;
+        }
+
+        #play {
+            position: fixed;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            top: 270px;
+            margin-top: 10px;
+            margin-right: 10px;
+            right: 0;
+            z-index: 12;
+        }
+
+        #play>button {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            border: 0px solid transparent;
+            outline: none;
+            margin-right: 2px;
+            margin-bottom: 4px;
+        }
+
+        #play>button>img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .doraemon {
+            position: relative;
+        }
+
+        #demo {
+            word-break: break-all;
+        }
+
+        #div1 {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            /* border: 1px solid blue; */
+
+        }
+
+        #div1::before {
+            content: '';
+            position: absolute;
+        }
+
+        #div1::after {
+            content: '';
+            position: absolute;
+        }
+
+        #buttons {
+            position: fixed;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            top: 50px;
+            margin-top: 10px;
+            margin-right: 10px;
+            right: 0;
+        }
+
+        #buttons>button {
+            margin-top: 10px;
+            padding: 4px 8px;
+        }
+
+
+
+        /* 媒体查询让代码在手机上也能看 */
+        @media(max-width: 500px) {
+            #demo {
+                height: 50vh;
+                overflow: auto;
+            }
+
+            #divWrapper {
+                height: 50vh;
+            }
+
+            .doraemon {
+                top: 0;
+            }
+
+            .head {
+                top: 0;
+            }
+
+            .neck {
+                top: 180px;
+            }
+
+            .itBottom {
+                top: 195px;
+            }
+
+            .foot {
+                top: 0;
+            }
+
+            .hand {
+                top: 0;
+                height: 124px;
+            }
+
+            .handLeft {
+                top: 0;
+            }
+
+            .handRight {
+                top: 0;
+            }
+
+            .zhuaLeft {
+                top: 8px;
+            }
+
+            .zhuaRight {
+                top: 8px;
+            }
+
+
+
+            #div1 {
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="player" src="./哆啦A梦主题曲 - 慕蓝桥Dorothy - 梦をかなえてドラえもん（Cover：mao）.mp3" loop style="float: right;"></audio>
+    <div id="play">
+        <button onclick="document.getElementById('player').play()"><img src="../images/start.jpg" alt=""></button>
+        <button onclick="document.getElementById('player').pause()"><img src="../images/stop.jpg" alt=""></button>
+    </div>
+    <div id="buttons">
+        <button id="btnPause">暂停</button>
+        <button id="btnPlay">播放</button>
+        <button id="btnSlow">慢速</button>
+        <button id="btnNormal">中速</button>
+        <button id="btnFast">快速</button>
+    </div>
+    <div id="demo"></div>
+    <div id="divWrapper">
+        <div id="div1">
+            <div class="doraemon">
+                <div class="head">
+                    <div class="face">
+                        <div class="nose"></div>
+                        <div class="lip top"></div>
+                        <div class="lip bottom"></div>
+                        <div class="whiskers">
+                            <div class="whiskersLeft">
+                                <div class="leftTop"></div>
+                                <div class="leftMiddle"></div>
+                                <div class="leftBottom"></div>
+                            </div>
+                            <div class="whiskersRight">
+                                <div class="rightTop"></div>
+                                <div class="rightMiddle"></div>
+                                <div class="rightBottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eyes">
+                        <div class="eye left">
+                            <div class="zhu left"></div>
+                        </div>
+                        <div class="eye right">
+                            <div class="zhu right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="neck">
+                    <div class="bell">
+                        <div class="react"></div>
+                        <div class="yuan"></div>
+                        <div class="shu"></div>
+                    </div>
+                </div>
+                <div class="itBottom">
+                    <div class="body">
+                        <div class="duzi"></div>
+                        <div class="ding">
+                            <div class="dou"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="hand">
+                    <div class="handLeft"></div>
+                    <div class="zhuaLeft"></div>
+                    <div class="handRight"></div>
+                    <div class="zhuaRight"></div>
+                </div>
+                <div class="foot">
+                    <div class="footLeft"></div>
+                    <div class="footRight"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
